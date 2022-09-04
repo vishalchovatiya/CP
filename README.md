@@ -1,3 +1,10 @@
+### side note
+- all these instructions are for windows & tested for windows
+- requirement 
+  - Install docker 
+  - Install vscode 
+  - Clone this repo
+
 - Build the image from repository directory terminal
 ```
 docker build -t cp .
