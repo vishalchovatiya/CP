@@ -1,10 +1,22 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.9.0)
 project(CP VERSION 0.1.0)
+project(my-project LANGUAGES CXX)
+
+set(TARGET_NAME main)
 
 set(HEADER_FILES ${CMAKE_SOURCE_DIR}/cxx-prettyprint/ ${CMAKE_SOURCE_DIR}/)
 
+add_executable(${TARGET_NAME} main.cc)
+
+target_include_directories(${TARGET_NAME} PRIVATE ${HEADER_FILES})
+target_link_libraries(${TARGET_NAME} -lgmp)
+
+# target_compile_features(${TARGET_NAME} PRIVATE cxx_std_17)
 
 
-add_executable(main main.cc)
-target_include_directories(main PRIVATE ${HEADER_FILES})
-target_link_libraries(main -lgmp)
+add_custom_target(
+        clangformat
+        COMMAND /usr/bin/clang-format
+        -i
+        ../main.cc
+)

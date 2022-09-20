@@ -1,0 +1,14 @@
+---
+# for clang-format version 7.1.0, generated from https://zed0.co.uk/clang-format-configurator/
+AllowShortBlocksOnASingleLine: 'true'
+AllowShortCaseLabelsOnASingleLine: 'true'
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: 'true'
+AllowShortLoopsOnASingleLine: 'true'
+ConstructorInitializerIndentWidth: '4'
+ContinuationIndentWidth: '4'
+IndentWidth: '4'
+ObjCBlockIndentWidth: '4'
+TabWidth: '4'
+
+...

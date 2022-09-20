@@ -5,7 +5,7 @@ LABEL description="Container for use with Visual Studio"
 # install build dependencies to build and debug 
 RUN apt-get update \
     && apt-get install -y build-essential make cmake gdb gdbserver \
-        rsync zip openssh-server git libgmp3-dev ninja-build
+        rsync zip openssh-server git libgmp3-dev ninja-build clang-format
 
 # configure SSH for communication with Visual Studio 
 RUN mkdir -p /var/run/sshd
