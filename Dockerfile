@@ -9,6 +9,13 @@ RUN apt-get update \
         rsync zip openssh-server git libgmp3-dev ninja-build clang-format \
         fish
 
+# Make fish shell as default 
+# Using SHELL instruction, you can change default shell for subsequent RUN instructions 
+SHELL ["fish", "--command"]
+RUN chsh -s /usr/bin/fish
+ENV SHELL /usr/bin/fish
+ENTRYPOINT [ "fish" ]
+
 # Configure SSH for communication with Visual Studio Code
 RUN mkdir -p /var/run/sshd
 
@@ -25,8 +32,3 @@ WORKDIR /CP
 # Run ssh server & expose port port 22 to connect from host PC
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
-
-# Enter to fish shell
-RUN chsh -s /usr/bin/fish
-ENV SHELL /usr/bin/fish
-ENTRYPOINT [ "fish" ]
